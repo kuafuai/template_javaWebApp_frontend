@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.reservation-form {
+    margin-bottom: 20px;
+}
+
+.reservation-info {
+    margin-bottom: 20px;
+}
+
+.cancel-reservation {
+    margin-bottom: 20px;
+}
+
+.info-display {
+    width: 300px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+#reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#reservation-table th,
+#reservation-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#reservation-table th {
+    background-color: #f2f2f2;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+input[type="text"],
+textarea {
+    width: 200px;
+}

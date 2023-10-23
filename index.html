@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports Arena Reservation System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" id="login-link">Login</a></li>
+            <li><a href="#" id="register-link">Register</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main-content">
+        <h1>Reservation System</h1>
+        <div class="reservation-form">
+            <h2>Reserve a Sports Arena</h2>
+            <form id="reservation-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required><br>
+                <label for="other-info">Other Information:</label>
+                <textarea id="other-info" name="other-info"></textarea><br>
+                <input type="submit" value="Reserve">
+            </form>
+        </div>
+        
+        <div class="reservation-info">
+            <h2>Reservation Information</h2>
+            <table id="reservation-table">
+                <thead>
+                    <tr>
+                        <th>Reservation ID</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Other Information</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Reservation information rows will be added dynamically -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="cancel-reservation">
+            <h2>Cancel Reservation</h2>
+            <form id="cancel-reservation-form">
+                <label for="reservation-id">Reservation ID:</label>
+                <input type="text" id="reservation-id" name="reservation-id" required><br>
+                <input type="submit" value="Cancel">
+            </form>
+        </div>
+    </div>
+    
+    <div class="info-display">
+        <h2>User Information</h2>
+        <div id="user-info">
+            <!-- User information will be displayed dynamically -->
+        </div>
+    </div>
+
+    <script>
+        // Login link functionality
+        document.getElementById("login-link").addEventListener("click", function(event) {
+            event.preventDefault();
+            // Add your login functionality here
+        });
+
+        // Register link functionality
+        document.getElementById("register-link").addEventListener("click", function(event) {
+            event.preventDefault();
+            // Add your registration functionality here
+        });
+
+        // Reservation form submission
+        document.getElementById("reservation-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Add your reservation form submission functionality here
+        });
+
+        // Cancel reservation form submission
+        document.getElementById("cancel-reservation-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Add your cancel reservation form submission functionality here
+        });
+    </script>
+</body>
+</html>
