@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: lightgray;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-area {
+            background-color: #f1f1f1;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .score-area {
+            background-color: #e1e1e1;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Left Sidebar</h2>
+            <p>This is the content for the left sidebar.</p>
+        </div>
+        <div class="content">
+            <div class="game-area">
+                <h2>Game Area</h2>
+                <p>This is the content for the game area.</p>
+            </div>
+            <div class="score-area">
+                <h2>Score Area</h2>
+                <p>This is the content for the score area.</p>
+            </div>
+        </div>
+        <div class="sidebar">
+            <h2>Right Sidebar</h2>
+            <p>This is the content for the right sidebar.</p>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/* Global styles */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.sidebar {
+    /* Styles for sidebar */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.game-area {
+    /* Styles for game area */
+}
+
+.score-area {
+    /* Styles for score area */
+}
+
+/* Other styles for the page */
