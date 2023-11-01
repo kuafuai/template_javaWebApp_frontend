@@ -1,0 +1,21 @@
+/* Navigation bar styles */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Content area styles */
+main {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+/* Information display area styles */
+aside {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
