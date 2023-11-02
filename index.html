@@ -1,0 +1,65 @@
+<!-- Create three-column layout -->
+<div class="ui grid">
+  <div class="four wide column">
+    <!-- Create product model input field -->
+    <div class="ui input">
+      <label for="product-model-input">Product Model:</label>
+      <input type="text" id="product-model-input" placeholder="Enter product model">
+    </div>
+  </div>
+  <div class="four wide column">
+    <!-- Create demand time input field -->
+    <div class="ui input">
+      <label for="demand-time-input">Demand Time:</label>
+      <input type="date" id="demand-time-input">
+    </div>
+  </div>
+  <div class="eight wide column">
+    <!-- Create purchase plan list -->
+    <div id="purchase-plan-list" class="ui list"></div>
+  </div>
+</div>
+
+<script>
+  // Function to handle user input and display purchase plans
+  function handleInput() {
+    // Get the product model input value
+    const productModel = document.getElementById("product-model-input").value;
+    
+    // Get the demand time input value
+    const demandTime = document.getElementById("demand-time-input").value;
+    
+    // Perform sorting and display the purchase plans
+    const sortedPurchasePlans = getSortedPurchasePlans(productModel, demandTime);
+    displayPurchasePlans(sortedPurchasePlans);
+  }
+  
+  // Function to get sorted purchase plans
+  function getSortedPurchasePlans(productModel, demandTime) {
+    // Implement the logic to get sorted purchase plans based on the product model and demand time
+    // ...
+    // Return the sorted purchase plans
+    return sortedPurchasePlans;
+  }
+  
+  // Function to display purchase plans
+  function displayPurchasePlans(purchasePlans) {
+    // Get the purchase plan list element
+    const purchasePlanList = document.getElementById("purchase-plan-list");
+    
+    // Clear the existing purchase plans
+    purchasePlanList.innerHTML = "";
+    
+    // Loop through the purchase plans and create list items
+    purchasePlans.forEach(purchasePlan => {
+      const listItem = document.createElement("div");
+      listItem.classList.add("item");
+      listItem.textContent = purchasePlan;
+      purchasePlanList.appendChild(listItem);
+    });
+  }
+  
+  // Add event listener to handle user input
+  document.getElementById("product-model-input").addEventListener("input", handleInput);
+  document.getElementById("demand-time-input").addEventListener("input", handleInput);
+</script>
