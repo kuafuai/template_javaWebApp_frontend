@@ -1,0 +1,46 @@
+<!-- Import required CSS and JS files -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js"></script>
+
+<!-- Create three-column layout -->
+<div class="ui grid">
+  <div class="four wide column">
+    <!-- Navigation bar -->
+    <div class="ui vertical menu">
+      <a class="item" id="history-link">北京烤鸭的历史</a>
+      <a class="item" id="process-link">北京烤鸭的制作过程</a>
+      <a class="item" id="characteristics-link">北京烤鸭的特点</a>
+      <a class="item" id="restaurant-link">推荐的餐厅</a>
+    </div>
+  </div>
+  <div class="eight wide column">
+    <!-- Content display area -->
+    <div id="content-area"></div>
+  </div>
+  <div class="four wide column">
+    <!-- Related recommendations -->
+    <div class="ui segment">
+      <h3 class="ui header">相关推荐</h3>
+      <div id="recommendations"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Add event listeners to the navigation links
+  document.getElementById("history-link").addEventListener("click", function() {
+    document.getElementById("content-area").innerHTML = "北京烤鸭的历史内容";
+  });
+
+  document.getElementById("process-link").addEventListener("click", function() {
+    document.getElementById("content-area").innerHTML = "北京烤鸭的制作过程内容";
+  });
+
+  document.getElementById("characteristics-link").addEventListener("click", function() {
+    document.getElementById("content-area").innerHTML = "北京烤鸭的特点内容";
+  });
+
+  document.getElementById("restaurant-link").addEventListener("click", function() {
+    document.getElementById("content-area").innerHTML = "推荐的餐厅内容";
+  });
+</script>
