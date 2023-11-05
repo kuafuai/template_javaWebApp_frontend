@@ -1,0 +1,51 @@
+/* Define the styles for the main page layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.content {
+    width: 60%;
+    padding: 20px;
+}
+
+.sidebar:last-child {
+    background-color: #e6e6e6;
+}
+
+.sidebar:last-child h3 {
+    margin-top: 0;
+}
+
+/* Define the styles for the content sections */
+#history {
+    /* Add styles for the history section */
+}
+
+#process {
+    /* Add styles for the process section */
+}
+
+#characteristics {
+    /* Add styles for the characteristics section */
+}
+
+#recommendations {
+    /* Add styles for the recommendations section */
+}
