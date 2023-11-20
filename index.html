@@ -14,12 +14,42 @@
   </div>
   <div class="eight wide column">
     <!-- Main content area -->
-    <div id="progress" class="ui segment"></div>
-    <div id="result" class="ui segment"></div>
+    <div id="progress" class="ui segment">
+      <!-- Progress content -->
+      <h2>Progress</h2>
+      <p>This is the progress section.</p>
+    </div>
+    <div id="result" class="ui segment">
+      <!-- Result content -->
+      <h2>Result</h2>
+      <p>This is the result section.</p>
+    </div>
   </div>
   <div class="four wide column">
     <!-- Auxiliary function area -->
-    <div id="videoPreview" class="ui segment"></div>
-    <div id="help" class="ui segment"></div>
+    <div id="videoPreview" class="ui segment">
+      <!-- Video preview content -->
+      <h2>Video Preview</h2>
+      <p>This is the video preview section.</p>
+    </div>
+    <div id="help" class="ui segment">
+      <!-- Help content -->
+      <h2>Help</h2>
+      <p>This is the help section.</p>
+    </div>
   </div>
 </div>
+
+<script>
+  // Event handler for "Open Video" item
+  $("#openVideo").click(function() {
+    // Implement the functionality to open a video
+    console.log("Open Video clicked");
+  });
+
+  // Event handler for "Set Parameters" item
+  $("#setParameters").click(function() {
+    // Implement the functionality to set parameters
+    console.log("Set Parameters clicked");
+  });
+</script>
