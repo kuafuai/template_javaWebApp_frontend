@@ -1,0 +1,25 @@
+<!-- Import necessary CSS and JavaScript files -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/script.js"></script>
+
+<!-- Create the three-column layout -->
+<div class="ui grid">
+  <div class="four wide column">
+    <!-- Navigation bar -->
+    <div class="ui vertical menu">
+      <a class="item" id="openVideo">Open Video</a>
+      <a class="item" id="setParameters">Set Parameters</a>
+    </div>
+  </div>
+  <div class="eight wide column">
+    <!-- Main content area -->
+    <div id="progress" class="ui segment"></div>
+    <div id="result" class="ui segment"></div>
+  </div>
+  <div class="four wide column">
+    <!-- Auxiliary function area -->
+    <div id="videoPreview" class="ui segment"></div>
+    <div id="help" class="ui segment"></div>
+  </div>
+</div>

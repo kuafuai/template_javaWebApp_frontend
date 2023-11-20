@@ -1,0 +1,62 @@
+/* Set the layout and style of the page */
+.ui.grid {
+  height: 100vh;
+}
+
+.ui.vertical.menu {
+  height: 100%;
+}
+
+.ui.segment {
+  margin-bottom: 10px;
+}
+
+#progress {
+  height: 50%;
+}
+
+#result {
+  height: 50%;
+}
+
+#videoPreview {
+  height: 50%;
+}
+
+#help {
+  height: 50%;
+}
+
+/* Additional CSS styles for the elements */
+.ui.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.ui.vertical.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ui.segment {
+  background-color: lightgray;
+  padding: 10px;
+}
+
+#progress {
+  background-color: lightblue;
+}
+
+#result {
+  background-color: lightgreen;
+}
+
+#videoPreview {
+  background-color: lightyellow;
+}
+
+#help {
+  background-color: lightpink;
+}
