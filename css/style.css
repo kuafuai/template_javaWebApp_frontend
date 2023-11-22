@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f2f2f2;
+    float: left;
+    height: 100vh;
+}
+
+.main-content {
+    width: 60%;
+    float: left;
+    height: 100vh;
+}
+
+.bottom-bar {
+    width: 100%;
+    background-color: #f2f2f2;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+}
+
+#trackingNumberInput {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#submitButton {
+    padding: 5px 10px;
+}

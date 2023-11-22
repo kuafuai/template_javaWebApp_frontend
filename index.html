@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracking App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#submitButton").click(function() {
+                var trackingNumber = $("#trackingNumberInput").val();
+                // Perform API request using the tracking number
+                // Display the user's data in the sidebar
+                // Update the main content area with the consultation page content
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- User data will be displayed here -->
+        <h2>User Data</h2>
+        <p>Example user data</p>
+    </div>
+    <div class="main-content">
+        <!-- Consultation page content will be displayed here -->
+        <h2>Consultation Page</h2>
+        <p>Example consultation page content</p>
+    </div>
+    <div class="bottom-bar">
+        <input type="text" id="trackingNumberInput" placeholder="Enter tracking number">
+        <button id="submitButton">Submit</button>
+    </div>
+</body>
+</html>
