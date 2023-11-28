@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="semantic-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to fetch questionnaire list from API
+            function fetchQuestionnaireList() {
+                $.ajax({
+                    url: "api/questionnaires",
+                    method: "GET",
+                    success: function(response) {
+                        // Update the questionnaire list section with the fetched data
+                        $("#questionnaire-list").html(response);
+                    },
+                    error: function() {
+                        console.log("Error fetching questionnaire list");
+                    }
+                });
+            }
+
+            // Function to fetch questionnaire details from API
+            function fetchQuestionnaireDetails(questionnaireId) {
+                $.ajax({
+                    url: "api/questionnaires/" + questionnaireId,
+                    method: "GET",
+                    success: function(response) {
+                        // Update the questionnaire details section with the fetched data
+                        $("#questionnaire-details").html(response);
+                    },
+                    error: function() {
+                        console.log("Error fetching questionnaire details");
+                    }
+                });
+            }
+
+            // Function to fetch questionnaire results from API
+            function fetchQuestionnaireResults(questionnaireId) {
+                $.ajax({
+                    url: "api/questionnaires/" + questionnaireId + "/results",
+                    method: "GET",
+                    success: function(response) {
+                        // Update the questionnaire results section with the fetched data
+                        $("#questionnaire-results").html(response);
+                    },
+                    error: function() {
+                        console.log("Error fetching questionnaire results");
+                    }
+                });
+            }
+
+            // Call the fetchQuestionnaireList function to populate the questionnaire list section
+            fetchQuestionnaireList();
+
+            // Event listener for clicking on a questionnaire in the list
+            $(document).on("click", ".questionnaire-item", function() {
+                var questionnaireId = $(this).data("id");
+
+                // Call the fetchQuestionnaireDetails function to populate the questionnaire details section
+                fetchQuestionnaireDetails(questionnaireId);
+
+                // Call the fetchQuestionnaireResults function to populate the questionnaire results section
+                fetchQuestionnaireResults(questionnaireId);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="ui container">
+        <h1>Questionnaire</h1>
+        <div id="questionnaire-list"></div>
+        <div id="questionnaire-details"></div>
+        <div id="questionnaire-results"></div>
+    </div>
+</body>
+</html>

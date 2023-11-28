@@ -1,0 +1,12 @@
+{
+  "name": "questionnaire-app",
+  "version": "1.0.0",
+  "description": "A web application for creating and managing online questionnaires",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
