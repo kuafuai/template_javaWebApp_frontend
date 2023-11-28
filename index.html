@@ -19,6 +19,7 @@
                     },
                     error: function() {
                         console.log("Error fetching questionnaire list");
+                        $("#questionnaire-list").html("Error fetching questionnaire list. Please try again later.");
                     }
                 });
             }
@@ -34,6 +35,7 @@
                     },
                     error: function() {
                         console.log("Error fetching questionnaire details");
+                        $("#questionnaire-details").html("Error fetching questionnaire details. Please try again later.");
                     }
                 });
             }
@@ -49,6 +51,7 @@
                     },
                     error: function() {
                         console.log("Error fetching questionnaire results");
+                        $("#questionnaire-results").html("Error fetching questionnaire results. Please try again later.");
                     }
                 });
             }
@@ -72,9 +75,9 @@
 <body>
     <div class="ui container">
         <h1>Questionnaire</h1>
-        <div id="questionnaire-list"></div>
-        <div id="questionnaire-details"></div>
-        <div id="questionnaire-results"></div>
+        <div id="questionnaire-list">Loading questionnaire list...</div>
+        <div id="questionnaire-details">Select a questionnaire to view details.</div>
+        <div id="questionnaire-results">Select a questionnaire to view results.</div>
     </div>
 </body>
 </html>
