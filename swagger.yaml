@@ -1,0 +1,139 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Cross-Border E-commerce Company API
+basePath: /api/v1
+tags:
+  - name: Products
+    description: API endpoints for managing products
+  - name: Cart
+    description: API endpoints for managing the shopping cart
+  - name: Payment
+    description: API endpoints for handling payments
+
+paths:
+  /products:
+    get:
+      tags:
+        - Products
+      summary: Get a list of products
+      parameters:
+        - name: name
+          in: query
+          description: Search keyword for products
+          required: false
+          type: string
+        - name: type
+          in: query
+          description: Sorting option for products
+          required: false
+          type: string
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Product"
+        400:
+          description: Invalid request
+
+  /cart:
+    post:
+      tags:
+        - Cart
+      summary: Add a product to the shopping cart
+      parameters:
+        - name: productId
+          in: body
+          description: ID of the product to add to the cart
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/CartItem"
+        400:
+          description: Invalid request
+
+    delete:
+      tags:
+        - Cart
+      summary: Remove a product from the shopping cart
+      parameters:
+        - name: productId
+          in: body
+          description: ID of the product to remove from the cart
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/CartItem"
+        400:
+          description: Invalid request
+
+  /payment:
+    post:
+      tags:
+        - Payment
+      summary: Process a payment
+      parameters:
+        - name: paymentInfo
+          in: body
+          description: Payment information
+          required: true
+          schema:
+            $ref: "#/definitions/PaymentInfo"
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: "#/definitions/Transaction"
+        400:
+          description: Invalid request
+
+definitions:
+  Product:
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: number
+      availability:
+        type: boolean
+
+  CartItem:
+    type: object
+    properties:
+      productId:
+        type: string
+      quantity:
+        type: integer
+
+  PaymentInfo:
+    type: object
+    properties:
+      cardNumber:
+        type: string
+      cardHolder:
+        type: string
+      expirationDate:
+        type: string
+      cvv:
+        type: string
+
+  Transaction:
+    type: object
+    properties:
+      transactionId:
+        type: string
+      amount:
+        type: number
+      status:
+        type: string

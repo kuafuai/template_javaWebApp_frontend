@@ -1,0 +1,81 @@
+<!-- Global Styles -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navigation Bar Styles */
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .menu li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .menu li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* Content Area Styles */
+    main {
+        padding: 20px;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .company-info p {
+        margin: 0;
+    }
+
+    .links li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .links li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .menu li {
+            margin-right: 5px;
+        }
+
+        .links li {
+            margin-right: 5px;
+        }
+    }
+</style>
