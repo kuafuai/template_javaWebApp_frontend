@@ -59,16 +59,14 @@ function getMeetingSummary(meetingId) {
     $.ajax({
         url: API_ENDPOINT + '/meeting-summary/' + meetingId,
         method: 'GET',
-        async: false,
         success: function(response) {
             meetingSummary = response.meetingSummary;
+            displayMeetingSummary(meetingSummary);
         },
         error: function() {
             alert('Failed to get meeting summary.');
         }
     });
-
-    return meetingSummary;
 }
 
 function displayMeetingSummary(meetingSummary) {

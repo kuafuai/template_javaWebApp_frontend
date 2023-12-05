@@ -5,6 +5,7 @@
     <title>Meeting Summary</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="js/script.js"></script>
 </head>
 <body>
@@ -33,5 +34,35 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Dynamically add meeting records to the 'meetingList' div
+        function addMeetingRecord(record) {
+            var listItem = $('<div class="item"></div>');
+            listItem.text(record);
+            $('#meetingList').append(listItem);
+        }
+
+        // Handle search functionality
+        $('#searchInput').on('input', function() {
+            var searchQuery = $(this).val().toLowerCase();
+            $('#meetingList .item').each(function() {
+                var record = $(this).text().toLowerCase();
+                if (record.includes(searchQuery)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+
+        // Handle PDF saving functionality
+        $('#savePdfButton').on('click', function() {
+            var meetingSummaryContent = $('#meetingSummary').text();
+            var doc = new jsPDF();
+            doc.text(meetingSummaryContent, 10, 10);
+            doc.save("meeting_summary.pdf");
+        });
+    </script>
 </body>
 </html>
