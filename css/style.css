@@ -1,0 +1,82 @@
+/* css/style.css */
+/* 1. Add comments to explain the purpose of each CSS rule */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 5px 10px;
+}
+
+/* 2a. Add comments to explain the purpose of each CSS rule */
+/* 2b. Use more specific class names instead of generic names */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+.heading {
+    margin-bottom: 10px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    margin-bottom: 5px;
+}
+
+.form {
+    margin-bottom: 10px;
+}
+
+.text-input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.custom-button {
+    padding: 5px 10px;
+}
+
+/* 2c. Add media queries to make the layout responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}

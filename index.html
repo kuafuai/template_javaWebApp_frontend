@@ -1,0 +1,100 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configuration Page</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <h2>Field Names</h2>
+            <ul id="fieldNamesList"></ul>
+            <form id="createFieldNameForm">
+                <input type="text" id="fieldNameInput" placeholder="Enter field name">
+                <button type="submit">Create Field Name</button>
+            </form>
+        </div>
+        <div class="column">
+            <h2>Field Values</h2>
+            <ul id="fieldValuesList"></ul>
+            <form id="createFieldValueForm">
+                <input type="text" id="fieldValueInput" placeholder="Enter field value">
+                <button type="submit">Create Field Value</button>
+            </form>
+            <button id="updateFieldValueStatusButton">Update Field Value Status</button>
+        </div>
+        <div class="column">
+            <h2>Configuration Details</h2>
+            <div id="configurationDetails"></div>
+            <form id="createApplicationConfigForm">
+                <input type="text" id="applicationConfigInput" placeholder="Enter application config">
+                <button type="submit">Create Application Config</button>
+            </form>
+            <form id="getFieldValuesForm">
+                <input type="text" id="getFieldValuesInput" placeholder="Enter field name">
+                <button type="submit">Get Field Values</button>
+            </form>
+            <div id="fieldValuesResult"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Event listener for creating field names
+            $("#createFieldNameForm").submit(function(event) {
+                event.preventDefault();
+                var fieldName = $("#fieldNameInput").val();
+                if (fieldName.trim() !== "") {
+                    $("#fieldNamesList").append("<li>" + fieldName + "</li>");
+                    $("#fieldNameInput").val("");
+                }
+            });
+
+            // Event listener for creating field values
+            $("#createFieldValueForm").submit(function(event) {
+                event.preventDefault();
+                var fieldValue = $("#fieldValueInput").val();
+                if (fieldValue.trim() !== "") {
+                    $("#fieldValuesList").append("<li>" + fieldValue + "</li>");
+                    $("#fieldValueInput").val("");
+                }
+            });
+
+            // Event listener for updating field value status
+            $("#updateFieldValueStatusButton").click(function() {
+                $("#fieldValuesList li").each(function() {
+                    $(this).toggleClass("active");
+                });
+            });
+
+            // Event listener for creating application config
+            $("#createApplicationConfigForm").submit(function(event) {
+                event.preventDefault();
+                var applicationConfig = $("#applicationConfigInput").val();
+                if (applicationConfig.trim() !== "") {
+                    $("#configurationDetails").text(applicationConfig);
+                    $("#applicationConfigInput").val("");
+                }
+            });
+
+            // Event listener for getting field values
+            $("#getFieldValuesForm").submit(function(event) {
+                event.preventDefault();
+                var fieldName = $("#getFieldValuesInput").val();
+                if (fieldName.trim() !== "") {
+                    var fieldValues = [];
+                    $("#fieldValuesList li").each(function() {
+                        fieldValues.push($(this).text());
+                    });
+                    var fieldValuesResult = fieldValues.join(", ");
+                    $("#fieldValuesResult").text(fieldValuesResult);
+                    $("#getFieldValuesInput").val("");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
