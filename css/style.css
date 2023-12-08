@@ -1,0 +1,119 @@
+/* css/style.css */
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 20%;
+    background-color: #f2f2f2;
+    float: left;
+    height: 100vh;
+}
+
+/* Main content styles */
+.main-content {
+    width: 60%;
+    float: left;
+    padding: 20px;
+}
+
+/* Footer styles */
+.footer {
+    width: 20%;
+    background-color: #f2f2f2;
+    float: left;
+    height: 100vh;
+}
+
+/* Login form styles */
+.login-form {
+    margin-top: 100px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Ticket list styles */
+.ticket-list {
+    margin-top: 20px;
+}
+
+.ticket-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket-list th,
+.ticket-list td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.ticket-list th {
+    background-color: #f2f2f2;
+}
+
+/* Ticket form styles */
+.ticket-form {
+    margin-top: 20px;
+}
+
+.ticket-form input[type="text"],
+.ticket-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ticket-form input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.ticket-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    /* Sidebar styles */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+
+    /* Main content styles */
+    .main-content {
+        width: 100%;
+        float: none;
+    }
+
+    /* Footer styles */
+    .footer {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+}
