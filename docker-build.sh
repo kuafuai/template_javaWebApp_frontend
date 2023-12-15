@@ -14,3 +14,4 @@ docker push ${DOCKER_REPO}:${COMMIT_SHA}
 docker push ${DOCKER_REPO}:latest
 
 echo "kuafuai_docker_image_pushed:${DOCKER_REPO}:${COMMIT_SHA}"
+
