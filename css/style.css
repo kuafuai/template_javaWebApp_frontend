@@ -1,0 +1,62 @@
+/* css/style.css */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+}
+
+section {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+aside {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+/* Semantic UI classes */
+.ui.button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ui.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ui.form {
+    margin-top: 20px;
+}
+
+.ui.message {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+}

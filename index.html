@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Integration Platform</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file">
+                <input type="submit" value="Upload">
+            </form>
+            <form id="storeDataForm" action="store.php" method="post">
+                <input type="text" name="data" id="data">
+                <input type="submit" value="Store">
+            </form>
+        </section>
+    </main>
+    <aside>
+        <h3>Auxiliary Functionality</h3>
+        <ul>
+            <li>Functionality 1</li>
+            <li>Functionality 2</li>
+            <li>Functionality 3</li>
+        </ul>
+    </aside>
+</body>
+</html>
