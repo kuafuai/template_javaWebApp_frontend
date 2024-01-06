@@ -8,32 +8,25 @@
     <script src="js/script.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" id="file">
-                <input type="submit" value="Upload">
-            </form>
-            <form id="storeDataForm" action="store.php" method="post">
-                <input type="text" name="data" id="data">
-                <input type="submit" value="Store">
-            </form>
-        </section>
-    </main>
-    <aside>
-        <h3>Auxiliary Functionality</h3>
-        <ul>
-            <li>Functionality 1</li>
-            <li>Functionality 2</li>
-            <li>Functionality 3</li>
-        </ul>
-    </aside>
+    <div class="container">
+        <h1>Testing Device and Program Management System</h1>
+        <table id="deviceProgramTable">
+            <thead>
+                <tr>
+                    <th>Device/Program Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- The testing devices and programs will be dynamically added here -->
+            </tbody>
+        </table>
+        <form id="addDeviceProgramForm">
+            <h2>Add New Device/Program</h2>
+            <label for="deviceProgramName">Name:</label>
+            <input type="text" id="deviceProgramName" name="deviceProgramName" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
 </body>
 </html>

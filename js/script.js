@@ -5,25 +5,37 @@ function handleSubmit(event) {
     event.preventDefault();
     var formData = new FormData(event.target);
     $.ajax({
-        url: 'backend/api/upload',
+        url: '/backend/api/upload',
         type: 'POST',
         data: formData,
         processData: false,
         contentType: false,
         success: function(response) {
-            updatePageContent(response);
+            updateDeviceProgramTable(response);
         },
         error: function(error) {
-            displayErrorMessage(error);
+            alert('Failed to upload data.');
         }
     });
 }
 
-// Function to update page content with response data
-function updatePageContent(data) {
-    // Update page content based on data
-    // Example: Assuming there is a div with id "content", you can update its content with the response data
-    $('#content').html(data);
+// Function to update device program table with response data
+function updateDeviceProgramTable(devicePrograms) {
+    // Clear the table body
+    $('#deviceProgramTable tbody').empty();
+
+    // Iterate through the devicePrograms array and add rows to the table
+    for (var i = 0; i < devicePrograms.length; i++) {
+        var deviceProgram = devicePrograms[i];
+        var row = '<tr>' +
+            '<td>' + deviceProgram.name + '</td>' +
+            '<td>' +
+            '<button class="editButton" data-id="' + deviceProgram.id + '">Edit</button>' +
+            '<button class="deleteButton" data-id="' + deviceProgram.id + '">Delete</button>' +
+            '</td>' +
+            '</tr>';
+        $('#deviceProgramTable tbody').append(row);
+    }
 }
 
 // Function to display error message
@@ -34,15 +46,15 @@ function displayErrorMessage(error) {
 }
 
 // Function to retrieve uploaded data
-function getUploadedData() {
+function loadDevicePrograms() {
     $.ajax({
-        url: 'backend/api/data',
+        url: '/backend/api/data',
         type: 'GET',
         success: function(response) {
-            updatePageContent(response);
+            updateDeviceProgramTable(response);
         },
         error: function(error) {
-            displayErrorMessage(error);
+            alert('Failed to retrieve data.');
         }
     });
 }
@@ -52,5 +64,5 @@ $('form').on('submit', handleSubmit);
 
 // Retrieve uploaded data on page load
 $(document).ready(function() {
-    getUploadedData();
+    loadDevicePrograms();
 });
