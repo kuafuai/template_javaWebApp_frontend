@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend Management System</title>
+  <!-- Include the necessary CSS stylesheets -->
+  <link rel="stylesheet" type="text/css" href="semantic-ui-css-file.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Include the necessary JavaScript files -->
+  <script src="jquery-library-file.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="ui container">
+    <h1>Backend Management System</h1>
+    <form id="orderForm" class="ui form">
+      <div class="field">
+        <label for="orderQuantity">Order Quantity</label>
+        <input type="number" id="orderQuantity" name="orderQuantity" placeholder="Enter order quantity" required>
+      </div>
+      <div class="field">
+        <label for="dispatcher">Dispatcher</label>
+        <input type="text" id="dispatcher" name="dispatcher" placeholder="Enter dispatcher name" required>
+      </div>
+      <div class="field">
+        <label for="dispatchTime">Dispatch Time</label>
+        <input type="datetime-local" id="dispatchTime" name="dispatchTime" required>
+      </div>
+      <div class="field">
+        <label for="dispatchContent">Dispatch Content</label>
+        <textarea id="dispatchContent" name="dispatchContent" placeholder="Enter dispatch content" required></textarea>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+    <div id="result" class="ui message"></div>
+  </div>
+</body>
+</html>

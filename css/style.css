@@ -1,0 +1,33 @@
+/* This file contains the CSS styles for the backend management system */
+
+/* Import the necessary CSS stylesheets */
+@import "semantic-ui-css-file.css";
+
+/* Define the layout and styles */
+
+/* Body Styles */
+body {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Container Styles */
+.ui.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Heading Styles */
+h1 {
+  text-align: center;
+}
+
+/* Form Styles */
+.ui.form {
+  margin-top: 20px;
+}
+
+/* Message Styles */
+.ui.message {
+  margin-top: 20px;
+}
