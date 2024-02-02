@@ -3,63 +3,72 @@
 <html>
 <head>
     <title>Web Application Firewall Bypass</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="js/script.js"></script>
-    <style>
-        body {
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .error {
-            color: red;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <h1>Web Application Firewall Bypass</h1>
         <form id="injectForm">
-            <div class="ui form">
-                <div class="field">
-                    <label for="urlInput">URL:</label>
-                    <input type="text" id="urlInput" name="urlInput" required>
-                </div>
-                <div class="field">
-                    <label for="payloadInput">Payload:</label>
-                    <input type="text" id="payloadInput" name="payloadInput" required>
-                </div>
-                <div class="field">
-                    <button class="ui primary button" type="submit" id="injectButton">Inject</button>
-                    <button class="ui button" type="button" id="cancelButton">Cancel</button>
-                </div>
-            </div>
+            <label for="urlInput">URL:</label>
+            <input type="text" id="urlInput" name="urlInput" required>
+            <label for="payloadInput">Payload:</label>
+            <input type="text" id="payloadInput" name="payloadInput" required>
+            <button type="submit" id="injectButton">Inject</button>
+            <button type="button" id="cancelButton">Cancel</button>
         </form>
         <div id="resultArea"></div>
         <div id="statusArea"></div>
         <div id="errorArea"></div>
     </div>
+
     <script>
         $(document).ready(function() {
-            // Submit form
-            $('#injectForm').submit(function(event) {
-                event.preventDefault();
-                var url = $('#urlInput').val();
-                var payload = $('#payloadInput').val();
-                // Perform injection logic
-                // ...
-                // Display result, status, and error messages
-                // ...
+            // Function to handle form submission
+            $("#injectForm").submit(function(event) {
+                event.preventDefault(); // Prevent form from submitting
+
+                // Get the URL and payload inputs
+                var url = $("#urlInput").val();
+                var payload = $("#payloadInput").val();
+
+                // Validate the inputs
+                if (url.trim() === "" || payload.trim() === "") {
+                    $("#errorArea").text("Please enter a valid URL and payload.");
+                    return;
+                }
+
+                // Clear previous results and errors
+                $("#resultArea").empty();
+                $("#statusArea").empty();
+                $("#errorArea").empty();
+
+                // Perform the injection
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: { payload: payload },
+                    success: function(response) {
+                        $("#resultArea").text(response);
+                        $("#statusArea").text("Injection successful.");
+                    },
+                    error: function(xhr, status, error) {
+                        $("#errorArea").text("Error: " + error);
+                    }
+                });
             });
 
-            // Cancel injection
-            $('#cancelButton').click(function() {
-                // Cancel injection logic
-                // ...
+            // Function to handle cancel button click
+            $("#cancelButton").click(function() {
+                // Clear the form inputs
+                $("#urlInput").val("");
+                $("#payloadInput").val("");
+
+                // Clear previous results and errors
+                $("#resultArea").empty();
+                $("#statusArea").empty();
+                $("#errorArea").empty();
             });
         });
     </script>
