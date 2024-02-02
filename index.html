@@ -1,0 +1,67 @@
+<!-- The purpose of this file is to create the basic structure and layout of the frontend page. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Application Firewall Bypass</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="js/script.js"></script>
+    <style>
+        body {
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Application Firewall Bypass</h1>
+        <form id="injectForm">
+            <div class="ui form">
+                <div class="field">
+                    <label for="urlInput">URL:</label>
+                    <input type="text" id="urlInput" name="urlInput" required>
+                </div>
+                <div class="field">
+                    <label for="payloadInput">Payload:</label>
+                    <input type="text" id="payloadInput" name="payloadInput" required>
+                </div>
+                <div class="field">
+                    <button class="ui primary button" type="submit" id="injectButton">Inject</button>
+                    <button class="ui button" type="button" id="cancelButton">Cancel</button>
+                </div>
+            </div>
+        </form>
+        <div id="resultArea"></div>
+        <div id="statusArea"></div>
+        <div id="errorArea"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            // Submit form
+            $('#injectForm').submit(function(event) {
+                event.preventDefault();
+                var url = $('#urlInput').val();
+                var payload = $('#payloadInput').val();
+                // Perform injection logic
+                // ...
+                // Display result, status, and error messages
+                // ...
+            });
+
+            // Cancel injection
+            $('#cancelButton').click(function() {
+                // Cancel injection logic
+                // ...
+            });
+        });
+    </script>
+</body>
+</html>
