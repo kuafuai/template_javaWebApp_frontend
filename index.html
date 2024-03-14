@@ -2,18 +2,17 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Spring Festival Sketches</title>
-  <link rel="stylesheet" type="text/css" href="semantic.min.css">
+  <title>春晚小品集合</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="jquery.min.js"></script>
-  <script src="semantic.min.js"></script>
   <script src="js/script.js"></script>
 </head>
 <body>
   <div class="ui container">
     <div class="ui three item menu">
-      <a class="item" id="overview-link" href="#">Overview</a>
-      <a class="item" id="category-link" href="#">Category</a>
+      <a class="item" id="overview-link">整体介绍</a>
+      <a class="item" id="category-link">类型分类</a>
       <div class="right menu">
         <div class="item">
           <div class="ui icon input">
@@ -26,12 +25,12 @@
     <div class="ui grid">
       <div class="four wide column">
         <div class="ui vertical menu">
-          <a class="item" id="overview-sidebar-link" href="#">Overview</a>
-          <a class="item" id="category-sidebar-link" href="#">Category</a>
+          <a class="item" id="overview-sidebar-link">整体介绍</a>
+          <a class="item" id="category-sidebar-link">类型分类</a>
         </div>
       </div>
-      <div class="twelve wide column">
-        <div id="content-area" class="ui segment"></div>
+      <div class="twelve wide column" id="content-area">
+        <!-- Content will be dynamically added here -->
       </div>
     </div>
   </div>

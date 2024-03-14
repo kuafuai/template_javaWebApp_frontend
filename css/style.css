@@ -66,3 +66,17 @@ body {
     margin-top: 10px;
   }
 }
+
+/* Define styles for the navigation bar, content area, and interaction area */
+.ui.menu {
+  margin-top: 20px;
+}
+
+#content-area {
+  padding: 20px;
+}
+
+#interaction-area {
+  padding: 20px;
+  background-color: #f9f9f9;
+}

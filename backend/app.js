@@ -1,23 +1,21 @@
 const express = require('express');
-const app = express();
-const apiRoutes = require('./routes/api');
-const logger = require('morgan');
+const apiRouter = require('./routes/api');
+
+const app = require('express')();
 
 // Middleware
 app.use(express.json());
-app.use(logger('dev'));
 
 // Routes
-app.use('/api', apiRoutes);
+app.use('/api', apiRouter);
 
-// Error handling middleware
-app.use((err, req, res, next) => {
+// Error handling
+app.use(function(err, req, res, next) {
   console.error(err.stack);
   res.status(500).send('Internal Server Error');
 });
 
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Start server
+app.listen(3000, function() {
+  console.log('Server started on port 3000');
 });
