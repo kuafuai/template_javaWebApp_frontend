@@ -1,0 +1,68 @@
+/* CSS styles for the page */
+
+/* Set the background color of the body */
+body {
+  background-color: #f9f9f9;
+}
+
+/* Add margin to the container */
+.ui.container {
+  margin-top: 20px;
+}
+
+/* Set the minimum height of the segment */
+.ui.segment {
+  min-height: 300px;
+}
+
+/* Set the width of the vertical menu */
+.ui.vertical.menu {
+  width: 100%;
+}
+
+/* Add cursor pointer to the menu items */
+.ui.vertical.menu .item {
+  cursor: pointer;
+}
+
+/* Add margin to the grid */
+.ui.grid {
+  margin-top: 20px;
+}
+
+/* Remove padding from the grid columns */
+.ui.grid .column {
+  padding: 0;
+}
+
+/* Remove margin and set height to 100% for the segment inside grid columns */
+.ui.grid .column .ui.segment {
+  margin: 0;
+  height: 100%;
+}
+
+/* Set the width of the input field */
+.ui.icon.input input {
+  width: 100%;
+}
+
+/* Remove border radius for text input fields */
+.ui.icon.input input[type="text"] {
+  border-radius: 0;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+  /* Add specific styles for smaller screens */
+  .ui.container {
+    margin-top: 10px;
+  }
+  
+  .ui.segment {
+    min-height: 200px;
+  }
+  
+  .ui.grid {
+    margin-top: 10px;
+  }
+}

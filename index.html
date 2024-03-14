@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Spring Festival Sketches</title>
+  <link rel="stylesheet" type="text/css" href="semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="jquery.min.js"></script>
+  <script src="semantic.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="ui container">
+    <div class="ui three item menu">
+      <a class="item" id="overview-link" href="#">Overview</a>
+      <a class="item" id="category-link" href="#">Category</a>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search..." id="search-input">
+            <i class="search icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui grid">
+      <div class="four wide column">
+        <div class="ui vertical menu">
+          <a class="item" id="overview-sidebar-link" href="#">Overview</a>
+          <a class="item" id="category-sidebar-link" href="#">Category</a>
+        </div>
+      </div>
+      <div class="twelve wide column">
+        <div id="content-area" class="ui segment"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      // Handle click event for overview link
+      $("#overview-link, #overview-sidebar-link").click(function() {
+        // Add code to handle the functionality of the overview link
+        // For example, you can load the overview content using AJAX and display it in the content area
+        $("#content-area").html("<h2>Overview Content</h2>");
+      });
+
+      // Handle click event for category link
+      $("#category-link, #category-sidebar-link").click(function() {
+        // Add code to handle the functionality of the category link
+        // For example, you can load the category content using AJAX and display it in the content area
+        $("#content-area").html("<h2>Category Content</h2>");
+      });
+
+      // Handle search functionality
+      $("#search-input").keyup(function() {
+        var searchText = $(this).val();
+        // Add code to handle the search functionality
+        // For example, you can filter the content based on the search text and display the filtered results in the content area
+        $("#content-area").html("<h2>Search Results for: " + searchText + "</h2>");
+      });
+    });
+  </script>
+</body>
+</html>
