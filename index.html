@@ -1,0 +1,57 @@
+<!-- COMMENT -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>仿微信网页客户端</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Dynamically populate the contact list
+            var contacts = [
+                { name: "John Doe", status: "Online" },
+                { name: "Jane Smith", status: "Offline" },
+                { name: "Mike Johnson", status: "Online" }
+            ];
+
+            var contactList = $("#contact-list");
+            contacts.forEach(function(contact) {
+                var listItem = $("<li>").text(contact.name + " - " + contact.status);
+                contactList.append(listItem);
+            });
+
+            // Add functionality to the '个人信息' and '设置' links
+            $("a[href='#']").click(function() {
+                var linkText = $(this).text();
+                alert("Clicked on " + linkText);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Top navigation bar -->
+        <nav>
+            <ul>
+                <li><a href="#">个人信息</a></li>
+                <li><a href="#">设置</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <!-- Contact list -->
+            <ul id="contact-list">
+                <!-- Contact items will be dynamically added here -->
+            </ul>
+        </div>
+        <div class="chat-window">
+            <!-- Chat window content will be dynamically added here -->
+        </div>
+        <div class="chat-details">
+            <!-- Chat details or other functionalities will be dynamically added here -->
+        </div>
+    </div>
+</body>
+</html>
