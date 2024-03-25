@@ -1,35 +1,41 @@
-<!-- The purpose of this file is to display the front-end page for the book analysis application. -->
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Book Analysis</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/script.js"></script>
+    <title>Book Analysis System</title>
+    <link rel="stylesheet" type="text/css" href="semantic-ui-css-file-path">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="jquery-js-file-path"></script>
+    <script src="semantic-ui-js-file-path"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
-  <div class="ui three column grid">
-    <div class="column">
-      <h1>Book Analysis</h1>
-      <table class="ui celled table">
-        <thead>
-          <tr>
-            <th>Book Name</th>
-            <th>Author</th>
-            <th>Publisher</th>
-            <th>Call Number</th>
-            <th>ISBN</th>
-            <th>Views</th>
-          </tr>
-        </thead>
-        <tbody id="bookData">
-          <!-- Book data will be dynamically added here -->
-        </tbody>
-      </table>
-      <button class="ui primary button" id="getDataButton">Get Book Data</button>
+    <div class="ui grid">
+        <div class="three wide column">
+            <!-- Navigation Bar -->
+            <div class="ui vertical menu">
+                <div class="item">
+                    <div class="ui input">
+                        <input type="text" id="bookNameInput" placeholder="Book Name">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ui input">
+                        <input type="text" id="bookTypeInput" placeholder="Book Type">
+                    </div>
+                </div>
+                <div class="item">
+                    <button class="ui primary button" id="searchButton">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="ten wide column">
+            <!-- Main Content Display Area -->
+            <div id="bookDataDisplay"></div>
+        </div>
+        <div class="three wide column">
+            <!-- Related Information Display Area -->
+            <div id="relatedInfoDisplay"></div>
+        </div>
     </div>
-  </div>
 </body>
 </html>

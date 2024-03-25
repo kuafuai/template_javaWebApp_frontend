@@ -1,53 +1,28 @@
-/* The purpose of this file is to define the styles for the front-end page. */
-
+/* Page Layout */
 body {
-  background-color: #f2f2f2;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 20px;
+.ui.grid {
+    height: 100vh;
 }
 
-h2 {
-  font-size: 24px;
-  margin-top: 20px;
+/* Navigation Bar */
+.ui.vertical.menu {
+    margin-top: 20px;
 }
 
-p {
-  margin-top: 10px;
+.ui.vertical.menu .item {
+    margin-bottom: 10px;
 }
 
-a {
-  color: blue;
-  text-decoration: none;
+/* Main Content Display Area */
+#bookDataDisplay {
+    margin-top: 20px;
 }
 
-table {
-  margin-top: 20px;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid black;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
+/* Related Information Display Area */
+#relatedInfoDisplay {
+    margin-top: 20px;
 }

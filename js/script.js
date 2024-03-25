@@ -1,33 +1,45 @@
-/* The purpose of this file is to handle the front-end logic for the book analysis application. */
-
 $(document).ready(function() {
-  // Event listener for the "Get Book Data" button
-  $("#getDataButton").click(function() {
-    // Send a request to the backend API to get book data
-    $.ajax({
-      url: "/api/bookData",
-      method: "GET",
-      success: function(response) {
-        // Clear the existing book data
-        $("#bookData").empty();
-
-        // Iterate through the book data and add it to the table
-        for (var i = 0; i < response.length; i++) {
-          var book = response[i];
-          var row = "<tr>" +
-                      "<td>" + book.title + "</td>" +
-                      "<td>" + book.author + "</td>" +
-                      "<td>" + book.publisher + "</td>" +
-                      "<td>" + book.callNumber + "</td>" +
-                      "<td>" + book.isbn + "</td>" +
-                      "<td>" + book.views + "</td>" +
-                    "</tr>";
-          $("#bookData").append(row);
-        }
-      },
-      error: function() {
-        alert("Failed to get book data.");
-      }
+    // Search button click event handler
+    $("#searchButton").click(function() {
+        var bookName = $("#bookNameInput").val();
+        var bookType = $("#bookTypeInput").val();
+        
+        // Send request to back-end API
+        $.ajax({
+            url: "back-end-api-url",
+            method: "GET",
+            data: {
+                name: bookName,
+                type: bookType
+            },
+            success: function(response) {
+                // Display book data in the main content display area
+                displayBookData(response);
+            },
+            error: function() {
+                // Handle error
+                alert("Error occurred while retrieving book data.");
+            }
+        });
     });
-  });
 });
+
+function displayBookData(bookData) {
+    // Clear previous book data
+    $("#bookDataDisplay").empty();
+    
+    // Iterate through book data and create HTML elements to display the data
+    for (var i = 0; i < bookData.length; i++) {
+        var book = bookData[i];
+        
+        var bookElement = $("<div>").addClass("ui segment");
+        var nameElement = $("<h3>").text("Name: " + book.name);
+        var typeElement = $("<p>").text("Type: " + book.type);
+        var authorElement = $("<p>").text("Author: " + book.author);
+        var subjectElement = $("<p>").text("Subject: " + book.subject);
+        var keywordsElement = $("<p>").text("Keywords: " + book.keywords.join(", "));
+        
+        bookElement.append(nameElement, typeElement, authorElement, subjectElement, keywordsElement);
+        $("#bookDataDisplay").append(bookElement);
+    }
+}
