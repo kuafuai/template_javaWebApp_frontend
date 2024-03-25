@@ -1,0 +1,4 @@
+# requirements.txt
+
+# Flask is a micro web framework for building web applications.
+Flask==2.0.1

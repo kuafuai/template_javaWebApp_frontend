@@ -1,0 +1,35 @@
+<!-- The purpose of this file is to display the front-end page for the book analysis application. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Analysis</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="ui three column grid">
+    <div class="column">
+      <h1>Book Analysis</h1>
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Call Number</th>
+            <th>ISBN</th>
+            <th>Views</th>
+          </tr>
+        </thead>
+        <tbody id="bookData">
+          <!-- Book data will be dynamically added here -->
+        </tbody>
+      </table>
+      <button class="ui primary button" id="getDataButton">Get Book Data</button>
+    </div>
+  </div>
+</body>
+</html>
