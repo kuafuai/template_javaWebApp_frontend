@@ -1,0 +1,27 @@
+/* This file is responsible for styling the index.html file */
+
+/* Set the layout of the three-column grid */
+.ui.three.column.grid {
+  margin-top: 50px;
+}
+
+/* Set the width of each column */
+.ui.three.column.grid > .column {
+  width: 33.33%;
+}
+
+/* Set the padding and alignment of the form */
+.ui.form {
+  padding: 20px;
+}
+
+/* Set the margin of the submit button */
+.ui.button {
+  margin-top: 10px;
+}
+
+/* Set the margin and alignment of the result message */
+#result {
+  margin-top: 20px;
+  text-align: center;
+}

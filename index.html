@@ -1,0 +1,68 @@
+<!-- This file is responsible for the front-end layout and functionality of the asset registration feature -->
+
+<!-- Include the necessary CSS and JavaScript files -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js"></script>
+
+<!-- Create a three-column layout using semantic-ui framework -->
+<div class="ui three column grid">
+  <div class="column">
+    <!-- Asset registration form -->
+    <form id="assetForm" class="ui form">
+      <div class="field">
+        <label>Asset Number</label>
+        <input type="text" name="assetNumber" placeholder="Asset Number" required>
+      </div>
+      <div class="field">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Name" required>
+      </div>
+      <div class="field">
+        <label>Specifications</label>
+        <input type="text" name="specifications" placeholder="Specifications" required>
+      </div>
+      <div class="field">
+        <label>Purchase Date</label>
+        <input type="date" name="purchaseDate" required>
+      </div>
+      <div class="field">
+        <label>Purchase Price</label>
+        <input type="number" name="purchasePrice" step="0.01" placeholder="Purchase Price" required>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="column"></div>
+  <div class="column"></div>
+</div>
+
+<!-- Display the result of the submission -->
+<div id="result" class="ui message hidden"></div>
+
+<script>
+  // Handle form submission
+  document.getElementById("assetForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form from submitting
+
+    // Get form data
+    var assetNumber = document.getElementsByName("assetNumber")[0].value;
+    var name = document.getElementsByName("name")[0].value;
+    var specifications = document.getElementsByName("specifications")[0].value;
+    var purchaseDate = document.getElementsByName("purchaseDate")[0].value;
+    var purchasePrice = document.getElementsByName("purchasePrice")[0].value;
+
+    // Validate form fields
+    if (assetNumber === "" || name === "" || specifications === "" || purchaseDate === "" || purchasePrice === "") {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    // Display result message
+    var resultMessage = document.getElementById("result");
+    resultMessage.classList.remove("hidden");
+    resultMessage.innerHTML = "Asset registered successfully.";
+
+    // Reset form fields
+    document.getElementById("assetForm").reset();
+  });
+</script>
